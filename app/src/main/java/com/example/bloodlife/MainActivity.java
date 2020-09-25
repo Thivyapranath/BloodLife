@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     else if (TextUtils.isEmpty(Unit.getText().toString()))
                         Toast.makeText(getApplicationContext(), "Please enter the Units", Toast.LENGTH_SHORT);
                     else if (TextUtils.isEmpty(Hos.getText().toString()))
-                        Toast.makeText(getApplicationContext(), "Please enter the Hospital", Toast.LENGTH_SHORT);
+                        Toast.makeText(getApplicationContext(), "Please enter the Hospital  ", Toast.LENGTH_SHORT);
 
                     else {
 
