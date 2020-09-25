@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Bloodlife</string>
+    <string name="name">Name</string>
+    <string name="bgrp">Enter the blood Group</string>
+    <string name="units" />
+    <string name="hos">Hospital</string>
+    <string name="pno">Enter Phone Number</string>
+</resources>

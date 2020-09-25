@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "930445306450",
+    "firebase_url": "https://bloodlife-afeab.firebaseio.com",
+    "project_id": "bloodlife-afeab",
+    "storage_bucket": "bloodlife-afeab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930445306450:android:07d6dfde6f9db604fccd8b",
+        "android_client_info": {
+          "package_name": "com.example.bloodlife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930445306450-9k91cq9hg7r6n1grqq3elc00i5lp301p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5G5YYZ814TCvXlRW_9wK_wjo5BV62kYM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930445306450-9k91cq9hg7r6n1grqq3elc00i5lp301p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
