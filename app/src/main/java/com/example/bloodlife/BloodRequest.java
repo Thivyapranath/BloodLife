@@ -3,6 +3,7 @@ package com.example.bloodlife;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -20,7 +21,7 @@ public class BloodRequest extends AppCompatActivity {
 
 
     EditText Name,blgrp,Unit,Hos,Phone;
-    Button btadd,BtnShow,btnUpdate;
+    Button btadd,BtnShow,btnUpdate,btnDEl;
     DatabaseReference dbRef;
 
     Request RE;
@@ -52,6 +53,7 @@ public class BloodRequest extends AppCompatActivity {
         btadd = findViewById(R.id.add);
         BtnShow=findViewById(R.id.btnShow);
         btnUpdate=findViewById(R.id.btnUp);
+        btnDEl=findViewById(R.id.btDel);
 
 
         RE=new Request();
@@ -163,7 +165,34 @@ public class BloodRequest extends AppCompatActivity {
 
 
 
+    btnDEl.setOnClickListener((new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            DatabaseReference delRef=FirebaseDatabase.getInstance().getReference().child("Request");
+            delRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if(dataSnapshot.hasChild("R1")){
+                        dbRef=FirebaseDatabase.getInstance().getReference().child("Request");
+                        dbRef.removeValue();
+                        clearControls();
+                        Toast.makeText(getApplicationContext(),"Data Deleted Successfully",Toast.LENGTH_SHORT).show();
+                    }
+                        else
+                            Toast.makeText(getApplicationContext(),"No Data Source",Toast.LENGTH_SHORT).show();
 
+
+
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
+    }));
 
     }
 }
