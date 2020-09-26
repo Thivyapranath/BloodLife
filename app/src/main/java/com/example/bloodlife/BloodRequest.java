@@ -16,7 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class MainActivity extends AppCompatActivity {
+public class BloodRequest extends AppCompatActivity {
 
 
     EditText Name,blgrp,Unit,Hos,Phone;
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-     //show the data what is in the database
+        //show the data what is in the database
         BtnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                         if(dataSnapshot.hasChildren()){
-                           Name.setText(dataSnapshot.child("name").getValue().toString());
+                            Name.setText(dataSnapshot.child("name").getValue().toString());
                             blgrp.setText(dataSnapshot.child("blgrp").getValue().toString());
                             Unit.setText(dataSnapshot.child("units").getValue().toString());
                             Hos.setText(dataSnapshot.child("hos").getValue().toString());
@@ -133,21 +133,21 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.hasChild("R1"))
-                      try {
-                          RE.setName(Name.getText().toString().trim());
-                          RE.setBlgrp(blgrp.getText().toString().trim());
-                          RE.setUnits(Unit.getText().toString().trim());
-                          RE.setHos(Hos.getText().toString().trim());
-                          RE.setPno(Integer.parseInt(Phone.getText().toString().trim()));
+                            try {
+                                RE.setName(Name.getText().toString().trim());
+                                RE.setBlgrp(blgrp.getText().toString().trim());
+                                RE.setUnits(Unit.getText().toString().trim());
+                                RE.setHos(Hos.getText().toString().trim());
+                                RE.setPno(Integer.parseInt(Phone.getText().toString().trim()));
 
-                          dbRef = FirebaseDatabase.getInstance().getReference().child("Request");
-                          dbRef.setValue(RE);
-                          clearControls();
-                          Toast.makeText(getApplicationContext(), "Data Updated successfully", Toast.LENGTH_SHORT).show();
-                      }
-                        catch (NumberFormatException e){
-                          Toast.makeText(getApplicationContext(),"Invalid Contact Number",Toast.LENGTH_SHORT).show();
-                        }
+                                dbRef = FirebaseDatabase.getInstance().getReference().child("Request");
+                                dbRef.setValue(RE);
+                                clearControls();
+                                Toast.makeText(getApplicationContext(), "Data Updated successfully", Toast.LENGTH_SHORT).show();
+                            }
+                            catch (NumberFormatException e){
+                                Toast.makeText(getApplicationContext(),"Invalid Contact Number",Toast.LENGTH_SHORT).show();
+                            }
                         else
                             Toast.makeText(getApplicationContext(),"No source to update",Toast.LENGTH_SHORT).show();
                     }
@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-             }
-         }
+    }
+}
 
 
