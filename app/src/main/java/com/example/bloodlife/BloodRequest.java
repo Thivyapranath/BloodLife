@@ -196,5 +196,3 @@ public class BloodRequest extends AppCompatActivity {
 
     }
 }
-
-
